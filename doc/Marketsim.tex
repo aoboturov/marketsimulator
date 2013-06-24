@@ -71,7 +71,7 @@ Scheduler class provides following interface:
 \begin{verbatim}
 class Scheduler(object):
     def reset(self)
-    def currentTime(self)
+    def current(self)
     def schedule(self, actionTime, handler)
     def scheduleAfter(self, dt, handler)
     def workTill(self, limitTime)
@@ -144,7 +144,7 @@ From trader point of view there can be other order types like Iceberg order but 
 Orders to buy or sell some assets should derive from \tmtexttt{order.Base} which provides basic functionality. It has following user interface:
 
 \begin{verbatim}
-class OrderBase(object):
+class Base(object):
     def __init__(self, volume):
         self.on_matched = Event()
         ...
